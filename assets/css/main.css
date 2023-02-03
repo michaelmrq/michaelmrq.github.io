@@ -3247,6 +3247,7 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			background-size: 100%;
 			background-attachment: fixed;
+			background-position: right 5% bottom 90%;
 			opacity: 0.8;
 			background-color: #ffffff;
 		}
