@@ -3242,6 +3242,13 @@ input, select, textarea {
 		.wrapper.style1 {
 			background-color: #5e42a6;
 		}
+		.wrapper.style5 {
+			background-image: url("images/me.png");
+			background-repeat: no-repeat;
+			background-size: contain;
+			opacity: 0.8;
+			background-color: #ffffff;
+		}
 
 		.wrapper.style1-alt {
 			background-color: #493382;
