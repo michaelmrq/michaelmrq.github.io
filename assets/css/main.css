@@ -341,7 +341,7 @@ input, select, textarea {
 		}
 
 		.row.gtr-uniform > * > :last-child {
-			margin-bottom: 0;
+			margin-bottom: -2em;
 		}
 
 		.row.aln-left {
@@ -398,6 +398,13 @@ input, select, textarea {
 
 		.row > .col-4 {
 			width: 33.33333%;
+			margin-top: -2em;
+			margin-bottom: -2em;
+		}
+		.row > .col-44 {
+			width: 33.33333%;
+			margin-top: 1.5em;
+			margin-bottom: 1em;
 		}
 
 		.row > .off-4 {
@@ -3249,6 +3256,16 @@ input, select, textarea {
 			background-attachment: fixed;
 			background-position: right 5% bottom 90%;
 			opacity: 0.8;
+			background-color: #ffffff;
+		}
+
+		.wrapper.style6 {
+			background-image: url("images/jet.gif");
+			background-repeat: no-repeat;
+			background-size: 50%;
+			background-attachment: fixed;
+			background-position: right 50% bottom 1000%;
+			opacity: 1;
 			background-color: #ffffff;
 		}
 
