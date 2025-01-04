@@ -1802,6 +1802,8 @@ input, select, textarea {
 
 		}
 
+		
+
 /* Box */
 
 	.box {
@@ -2808,6 +2810,40 @@ input, select, textarea {
 						}
 
 		}
+
+		.center-align-section {
+			display: flex;
+			flex-direction: column;
+			align-items: center; /* Centers the content block horizontally */
+			justify-content: center;
+			text-align: left; /* Justifies text to the left */
+			padding: 0 20px; /* Adds padding to prevent the text from touching edges */
+			box-sizing: border-box; /* Ensures padding doesn't affect overall dimensions */
+		}
+		
+		.center-align-section .row {
+			width: 100%;
+			justify-content: center; /* Center-aligns the row content */
+			margin-bottom: 20px; /* Adds spacing between rows */
+		}
+		
+		.center-align-section img {
+			max-width: 100%; /* Ensures images are responsive */
+			display: block; /* Removes inline spacing */
+			margin: 0 auto; /* Centers the images */
+		}
+		
+		.center-align-section p {
+			margin: 0 auto; /* Centers the block itself */
+			max-width: 1500px; /* Restricts text width for readability */
+			line-height: 1.6; /* Improves line spacing */
+			text-align: justify; /* Justifies the text to the left */
+			padding: 0 20px; /* Adds horizontal padding for better spacing */
+		}
+		
+	
+		
+
 
 /* Contact */
 
