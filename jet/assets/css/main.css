@@ -3304,7 +3304,7 @@ input, select, textarea {
 			top: -500px; /* Move the content up 50px */
 		}
 		.wrapper.style5 {
-			background-image: url("images/a.jpeg");
+			background-image: url("images/a.jpg");
 			background-repeat: no-repeat;
 			background-size: 100%;
 			background-attachment: fixed;

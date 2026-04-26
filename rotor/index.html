@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Rotorcraft Aeroacoustics | Michael Marques</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Rotorcraft aeroacoustics research on eVTOL propeller noise in hover, edgewise flight, and ground-effect conditions." />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/site.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload research-page rotor-page">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<a href="../" class="logo"><strong>MICHAEL M.</strong> <span>PORTFOLIO</span></a>
+				<nav>
+					<a href="../#one">Research</a>
+					<a href="../jet/">Jet</a>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Rotorcraft Aeroacoustics</h1>
+							<p class="lede">Multi-fidelity assessment of eVTOL propeller noise in ground-effect conditions, connecting wake physics, acoustic-surface strategy, and far-field noise prediction.</p>
+
+							<section class="research-hero">
+								<div>
+									<span class="image fit"><img src="../images/hovernew2.gif" alt="eVTOL propeller hover simulation near a ground plane" /></span>
+								</div>
+								<div class="paper-meta">
+									<p class="eyebrow">Journal Paper</p>
+									<h2>Multi-fidelity assessment of eVTOL propeller noise in ground-effect conditions</h2>
+									<p>Michael Marques, Vladimir V. Golubev, and Anastasios S. Lyrintzis. <em>International Journal of Aeroacoustics</em>, 2026.</p>
+									<ul class="actions">
+										<li><a href="https://doi.org/10.1177/1475472X261419107" class="button" target="_blank" rel="noopener">Read article</a></li>
+									</ul>
+								</div>
+							</section>
+
+							<section class="research-grid">
+								<article class="research-card">
+									<span class="icon solid major fa-helicopter"></span>
+									<h3>Problem</h3>
+									<p>eVTOL aircraft spend critical portions of flight near vertiports, rooftops, and other reflecting surfaces. This research studies how propeller wakes, ground proximity, and reflected waves reshape tonal and broadband noise.</p>
+								</article>
+								<article class="research-card">
+									<span class="icon solid major fa-microchip"></span>
+									<h3>Framework</h3>
+									<p>High-fidelity DDES in OpenFOAM is coupled with PSU-WOPWOP for FW-H acoustic prediction, while CDI-CHARM provides a faster free-vortex and panel-method path for broader clearance and flight-condition studies.</p>
+								</article>
+								<article class="research-card">
+									<span class="icon solid major fa-wave-square"></span>
+									<h3>Acoustics</h3>
+									<p>The study compares impermeable and permeable FW-H surfaces, ground reflections through the Method of Images, and a new upside-down T permeable surface that captures reflected waves without double counting.</p>
+								</article>
+							</section>
+
+							<section class="split-study">
+								<div>
+									<h2>Ground-Effect Noise</h2>
+									<p>The work focuses on hover and edgewise flight for a 1/5-scale five-blade eVTOL propeller. Ground proximity redirects the wake from downwash to outwash, strengthens blade-wake and blade-vortex interactions, and changes the loading distribution across the blade.</p>
+									<p>In hover, in-ground-effect cases increase sound pressure levels beneath the rotor by about 5 dB at small clearances while reducing levels above the rotor through destructive interference. In edgewise flight, the acoustic response is more directional and non-monotonic: intermediate clearances can radiate more strongly than the closest ground positions.</p>
+								</div>
+								<div>
+									<span class="image fit"><img src="../images/rotor.png" alt="Rotorcraft aerodynamic visualization" /></span>
+								</div>
+							</section>
+
+							<section class="research-grid compact">
+								<article class="research-card">
+									<h3>Validation</h3>
+									<p>Performance, spectra, OASPL, directivity, and beamforming trends are checked against experimental measurements before using the simulations for ground-effect acoustic analysis.</p>
+								</article>
+								<article class="research-card">
+									<h3>High Fidelity</h3>
+									<p>OpenFOAM DDES resolves the unsteady rotor wake and broadband content, using large meshes for hover and ground-effect cases with FW-H data collected for far-field noise prediction.</p>
+								</article>
+								<article class="research-card">
+									<h3>Mid Fidelity</h3>
+									<p>CDI-CHARM efficiently captures major tonal trends and loading changes across ground clearances, while its actuator-line formulation does not resolve the broadband content seen in DDES.</p>
+								</article>
+							</section>
+
+							<section class="split-study reverse">
+								<div>
+									<span class="image fit"><img src="../images/vort.png" alt="Rotor wake vortex visualization" /></span>
+								</div>
+								<div>
+									<h2>FW-H Surface Strategy</h2>
+									<p>A central contribution of the paper is the acoustic integration strategy. Impermeable propeller surfaces require the Method of Images to estimate ground reflections, but applying that same correction to some permeable surfaces can overpredict reflected energy.</p>
+									<p>The proposed upside-down T permeable surface encloses the rotor wake and near-ground reflection region, letting the FW-H surface capture reflected acoustic waves directly. This reduces reliance on the Method of Images and improves the physical interpretation of ground-effect noise predictions.</p>
+								</div>
+							</section>
+
+							<section class="takeaways">
+								<h2>Key Takeaways</h2>
+								<ul>
+									<li>Ground effect can materially increase eVTOL propeller noise, especially below the rotor in hover.</li>
+									<li>Wake redirection, recirculation, and blade-vortex interaction are central drivers of the acoustic changes.</li>
+									<li>CHARM is useful for fast tonal trend studies, while DDES is needed for broadband noise and detailed wake physics.</li>
+									<li>Careful FW-H surface placement is essential for reliable ground-reflection modeling.</li>
+								</ul>
+							</section>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Portfolio by Michael Marques</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
