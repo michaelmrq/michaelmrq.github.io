@@ -153,13 +153,17 @@
 				var	$this = $(this),
 					$image = $this.find('.image'),
 					$img = $image.find('img'),
+					$video = $image.find('video'),
 					x;
 
 				// Assign image.
-					$image.css('background-image', 'url(' + $img.attr('src') + ')');
+					if ($img.length > 0)
+						$image.css('background-image', 'url(' + $img.attr('src') + ')');
+					else if ($video.length > 0)
+						$image.css('background-image', 'none');
 
 				// Set background position.
-					if (x = $img.data('position'))
+					if ($img.length > 0 && (x = $img.data('position')))
 						$image.css('background-position', x);
 
 				// Hide <img>.

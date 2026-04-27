@@ -154,9 +154,21 @@ input[type="button"]:hover {
 	width: 42%;
 }
 
-.spotlights > section > .image img {
+.spotlights > section > .image img,
+.spotlights > section > .image video {
 	height: 100%;
 	object-fit: cover;
+	width: 100%;
+}
+
+.spotlights > section > .image video,
+.image.fit video {
+	display: block;
+}
+
+.image.fit video {
+	border-radius: 0.25em;
+	height: auto;
 	width: 100%;
 }
 
