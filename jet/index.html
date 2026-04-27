@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 <!--
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
@@ -33,48 +32,131 @@
 		<section id="main" class="wrapper">
 			<div class="inner">
 				<h1 class="major">Jet Aeroacoustics</h1>
-				<p class="lede">High-fidelity prediction and active control of supersonic rectangular jet noise using nozzle-lip micro-jet excitation.</p>
-				<div class="box alt">
-					<div class="row gtr-uniform">
-						<div class="col-4"><span class="image fit"><img src="images/clean.gif" alt="Baseline rectangular jet simulation" /></span></div>
-						<div class="col-4"><span class="image fit"><img src="images/15.gif" alt="Rectangular jet simulation with St_F 0.15 excitation" /></span></div>
-						<div class="col-4"><span class="image fit"><img src="images/30.gif" alt="Rectangular jet simulation with St_F 0.30 excitation" /></span></div>
-						<div class="col-44"><p style="text-align: center;">$$\text{Baseline}$$</p></div>
-						<div class="col-44"><p style="text-align: center;">$$St_F=0.15$$</p></div>
-						<div class="col-44"><p style="text-align: center;">$$St_F=0.30$$</p></div>
-						<p>This study conducts a comprehensive high-fidelity simulation of a rectangular jet with a nozzle aspect ratio of 2, with a focus on investigating the jet noise control approach via nozzle-lip micro-jet excitation. The objective is to both examine the possible jet noise reduction in rectangular jets and to obtain insights into the alterations in the jet flow structures caused by the micro-jet that lead to the change in the far-field acoustic radiation. In particular, the study investigates the impact of various frequency excitation modes implemented through jet-axis-directed periodic fluidic injections at the nozzle lip. SPOD analysis is conducted to examine the corresponding modification of the dominant coherent jet structures and their correlation with the radiated noise spectrum.</p>
-					</div>
-				</div>
-			</div>
+				<p class="lede">High-fidelity simulation of a heated, fully expanded Mach 1.5 rectangular jet, focused on active noise control through unsteady microjet excitation along the nozzle lip.</p>
 
-			<!-- Second Section -->
-			<div class="box alt center-align-section">
-				<div class="row gtr-uniform">
-					<div class="col-4">
+				<section class="jet-gallery">
+					<article>
+						<span class="image fit">
+							<video autoplay muted loop playsinline preload="metadata" width="480" height="480" poster="images/clean-poster.jpg" aria-label="Baseline rectangular jet simulation">
+								<source src="images/clean.webm" type="video/webm" />
+								<source src="images/clean.mp4" type="video/mp4" />
+							</video>
+						</span>
+						<p class="media-label">Baseline</p>
+					</article>
+					<article>
+						<span class="image fit">
+							<video autoplay muted loop playsinline preload="metadata" width="480" height="480" poster="images/15-poster.jpg" aria-label="Rectangular jet simulation with St_F 0.15 excitation">
+								<source src="images/15.webm" type="video/webm" />
+								<source src="images/15.mp4" type="video/mp4" />
+							</video>
+						</span>
+						<p class="media-label">St<sub>F</sub> = 0.15</p>
+					</article>
+					<article>
+						<span class="image fit">
+							<video autoplay muted loop playsinline preload="metadata" width="480" height="480" poster="images/30-poster.jpg" aria-label="Rectangular jet simulation with St_F 0.30 excitation">
+								<source src="images/30.webm" type="video/webm" />
+								<source src="images/30.mp4" type="video/mp4" />
+							</video>
+						</span>
+						<p class="media-label">St<sub>F</sub> = 0.30</p>
+					</article>
+				</section>
+
+				<section class="research-grid compact">
+					<article class="research-card">
+						<h3>Nozzle</h3>
+						<p>Rectangular converging-diverging nozzle with 12.95 mm by 25.91 mm exit dimensions, aspect ratio 2, and smaller exit height used as the characteristic length D.</p>
+					</article>
+					<article class="research-card">
+						<h3>Operating Point</h3>
+						<p>Heated, fully expanded Mach 1.5 jet with NPR = 3.67, NTR = 3, and experimental Reynolds number near 277,500.</p>
+					</article>
+					<article class="research-card">
+						<h3>Control Method</h3>
+						<p>Unheated air is injected downstream along the major-axis nozzle lip to perturb the shear layer at selected forcing Strouhal numbers.</p>
+					</article>
+				</section>
+
+				<section class="split-study">
+					<div>
+						<h2>Simulation Setup</h2>
+						<p>The flow field is computed with a density-based compressible OpenFOAM solver using a TVD scheme. A statistically steady k-&omega; SST RANS solution is first obtained, then the simulation is advanced with DES using second-order backward time integration and second-order central-upwind spatial discretization.</p>
+						<p>The far-field boundaries use a waveTransmissive advective condition based on NSCBC concepts to limit artificial reflections, while the internal nozzle walls are treated as adiabatic no-slip walls. This lets the near-wall region remain URANS-like while the free shear layer is resolved in LES mode.</p>
+					</div>
+					<div class="details-panel">
+						<h3>Grid and Domain</h3>
+						<ul>
+							<li>Coarse grid: 43 million cells.</li>
+							<li>Fine grid: 112 million cells.</li>
+							<li>Mostly hexahedral cells for cleaner acoustic-wave propagation.</li>
+							<li>Domain: 64D downstream, 16D upstream, and 40D radially.</li>
+							<li>Near-wall target: y+ around 50.</li>
+							<li>Buffer zone extends downstream to reduce outflow reflections.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="split-study reverse">
+					<div>
 						<span class="image fit">
 							<video autoplay muted loop playsinline preload="metadata" width="640" height="313" poster="images/gifclean-poster.jpg" aria-label="Fine-grid baseline jet animation">
 								<source src="images/gifclean.webm" type="video/webm" />
 								<source src="images/gifclean.mp4" type="video/mp4" />
 							</video>
 						</span>
+						<p class="media-label">Fine-grid baseline</p>
 					</div>
-					<div class="col-4">
+					<div>
+						<h2>Excitation Strategy</h2>
+						<p>The active-control region is represented as a thin rectangular segment along the nozzle lip on the major axis, excluding the edges. The lip thickness is 0.5 mm and the microjet-to-nozzle exit area ratio is 0.07722.</p>
+						<p>The sinusoidal injection is prescribed to reach a peak injection-to-jet mass-flow ratio of 1%. With the main jet exit velocity near 750 m/s, the peak injection velocity is approximately 97 m/s. Baseline pressure and SPOD analysis identify a dominant near-field peak around St<sub>D</sub> = 0.15, motivating excitation at the super-harmonic St<sub>F</sub> = 0.30.</p>
+					</div>
+				</section>
+
+				<section class="split-study">
+					<div>
+						<h2>Acoustic Post-Processing</h2>
+						<p>Far-field acoustics are predicted with a permeable FW-H surface wrapped around the refined jet region and integrated using the Farassat 1A formulation. Data are collected after the turbulent field reaches a statistically stationary state, with the simulation run for eight flow-through times before acoustic sampling.</p>
+						<p>The acoustic dataset uses 3072 samples at 200 kHz. Spectra are computed with three 1024-sample windows, a Hanning window, and 50% overlap. Five FW-H end caps, distributed from 60D to 64D, are averaged to reduce spurious low-frequency contributions from eddies crossing the downstream cap.</p>
+					</div>
+					<div>
 						<span class="image fit">
 							<video autoplay muted loop playsinline preload="metadata" width="640" height="313" poster="images/gifex-poster.jpg" aria-label="Fine-grid excited jet animation">
 								<source src="images/gifex.webm" type="video/webm" />
 								<source src="images/gifex.mp4" type="video/mp4" />
 							</video>
 						</span>
+						<p class="media-label">Fine-grid St<sub>F</sub> = 0.30</p>
 					</div>
-				</div>
-				<div class="row gtr-uniform">
-					<div class="col-44"><p style="text-align: center;"><br>$$\text{Baseline}$$</p></div>
-					<div class="col-44"><p style="text-align: center;"><br>$$St_F=0.30$$</p></div>
-				</div>
-				<p>
-					Fine grid animation
-				</p>
-			</div>			
+				</section>
+
+				<section class="research-grid compact">
+					<article class="research-card">
+						<h3>Flow Physics</h3>
+						<p>The baseline simulation predicts a potential core near 9.5D. Excitation shortens the potential core, increases jet spread, and raises turbulent mixing near the lip-line region.</p>
+					</article>
+					<article class="research-card">
+						<h3>SPOD Insight</h3>
+						<p>Pressure SPOD shows that the dominant coherent structures are concentrated around St<sub>D</sub> = 0.15-0.17. The St<sub>F</sub> = 0.30 case breaks down that compact wavepacket and redistributes modal energy.</p>
+					</article>
+					<article class="research-card">
+						<h3>Noise Outcome</h3>
+						<p>The St<sub>F</sub> = 0.30 case reduces broadband noise over much of the spectrum and lowers peak OASPL by up to 4 dB, while introducing a localized tone at the excitation frequency.</p>
+					</article>
+				</section>
+
+				<section class="takeaways">
+					<h2>Key Takeaways</h2>
+					<ul>
+						<li>Microjet forcing modifies the rectangular jet shear layer before large coherent structures dominate far-field radiation.</li>
+						<li>SPOD links near-field coherent-structure suppression with far-field broadband-noise reduction.</li>
+						<li>The strongest OASPL reduction appears near the primary radiation direction, but the excited case can amplify a narrowband tone at some azimuthal angles.</li>
+						<li>Fine-grid resolution and FW-H surface placement are central to resolving the useful acoustic bandwidth without contaminating the spectra.</li>
+					</ul>
+				</section>
+			</div>
 		</section>
 	</div>
 
