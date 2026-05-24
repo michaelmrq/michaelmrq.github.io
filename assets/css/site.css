@@ -188,8 +188,18 @@ input[type="button"]:hover {
 	background-color: #2d463f;
 }
 
+.spotlights > section:nth-child(4) {
+	background-color: #202833;
+}
+
 .spotlights > section > .content {
 	width: 58%;
+}
+
+.coming-soon-button {
+	cursor: default;
+	opacity: 0.72;
+	pointer-events: none;
 }
 
 .features {
